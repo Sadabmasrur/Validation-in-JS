@@ -10,7 +10,23 @@
       <p id="message"></p>
     </form>
 
+    <input id="id1" type="number" min="100" max="300" required />
+
+    <button onclick="myFunction()">OK</button>
+    <p id="result"></p>
+
     <script>
+      function myFunction() {
+        var inpObj = document.getElementById("id1");
+
+        if (!inpObj.checkValidity()) {
+          document.getElementById("result").innerHTML =
+            inpObj.validationMessage;
+        } else {
+          document.getElementById("result").innerHTML = "Input OK";
+        }
+      }
+
       function validateForm() {
         var x = document.forms["myForm"]["fname"].value;
 
